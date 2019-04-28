@@ -1,8 +1,10 @@
 require("dotenv").config();
 
-var keys = require("./keys.js");
-var spotify = new Spotify(keys.spotify);
 var Spotify = require('node-spotify-api');
+var keys = require("./keys");
+var spotify = new Spotify(keys.spotify);
+
+
 var axios = require("axios");
 var moment = require('moment');
 var inquirer = require('inquirer');
@@ -56,25 +58,39 @@ function concertThis(){
   .then(function(response) {
     console.log("something anything!");
     console.log("Artist Name: " + inputTwo);
-    console.log(response.venue);
-    // console.log("still trying");
-    // console.log(response.venue.datetime);
-    // console.log(response.venue.city + ", "+ venue.region + "; " + venue.country);
-    // console.log("still trying");
-  })
-  .catch(function(error) {
-    if (error.response) {
-      console.log(error.response.data);
-      console.log(error.response.status);
-      console.log(error.response.headers);
-    } else if (error.request) {
-      console.log(error.request);
-    } else {
-      console.log("Error", error.message);
-    }
-    console.log(error.config);
+    // console.log(response.venue);
+  //   console.log("still trying");
+  //   console.log(response.venue);
+  //   // console.log(response.venue.city + ", "+ venue.region + "; " + venue.country);
+  //   console.log("still trying");
+  // })
+  // .catch(function(error) {
+  //   if (error.response) {
+  //     console.log(error.response.data);
+  //     console.log(error.response.status);
+  //     console.log(error.response.headers);
+  //   } else if (error.request) {
+  //     console.log(error.request);
+  //   } else {
+  //     console.log("Error", error.message);
+  //   }
+  //   console.log(error.config);
   });
 }
+
+
+function spotifyThisSong () {
+  spotify.search({ type: 'track', query: inputTwo}, function(err, data) {
+    if (err) {
+      return console.log('Error: ' + err);
+    }
+  console.log("Artist Name: " + data.tracks.items[0].artists[0].name);
+  console.log("Song: " + data.tracks.items[0].name);
+  console.log("Preview link: " + data.tracks.items[0].preview_url);
+  console.log("Album: " + data.tracks.items[0].album.name);
+  })}
+  
+
 
   // function whatItSays (){
   //   fs.readFile('random.tx', 'utf8', function (err, data){
@@ -87,4 +103,3 @@ function concertThis(){
   //     }
   //     });
   //   }
-  
