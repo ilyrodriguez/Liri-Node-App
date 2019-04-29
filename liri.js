@@ -39,7 +39,7 @@ switch (inputOne) {
 
     function movieThis() { 
     //   if (!inputTwo) {
-    //     inputTwo = "Mr. Nobody"
+    //     inputTwo = "Mr. Nobody";
     // };
     axios.get(queryUrl).then(
       function(response) {
@@ -69,15 +69,13 @@ switch (inputOne) {
 function concertThis(){
     axios.get("https://rest.bandsintown.com/artists/" + inputTwo + "/events?app_id=codingbootcamp")
   .then(function(response) {
-    console.log("something anything!");
     console.log("Artist Name: " + inputTwo);
     console.log("Venue: " + response.data[0].venue.name);
-    console.log("still trying");
     console.log("Venue location: " + response.data[0].venue.city, response.data[0].venue.region);
-    // console.log(response.venue.city + ", "+ venue.region + "; " + venue.country);
-    console.log("date: " + response.data[0].moment(datetime).format("mm/dd/yyyy"));
+    console.log("date: " + moment(response.data[0].datetime).format("MM/DD/YYYY"));
   })
 }
+
   // .catch(function(error) {
   //   if (error.response) {
   //     console.log(error.response.data);
