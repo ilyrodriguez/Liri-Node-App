@@ -2,10 +2,10 @@
 
 Commands:
 
-node liri.js concert-this (name of band)
-node liri.js spotify-this-song (name of song)
-node liri.js movie-this (name of movie)
-node liri.js do-what-is-says 
+- node liri.js concert-this (name of band)
+- node liri.js spotify-this-song (name of song)
+- node liri.js movie-this (name of movie)
+- node liri.js do-what-is-says 
 
 ![image](https://user-images.githubusercontent.com/24906805/57029854-f065f100-6c10-11e9-87f5-1ddac603b874.png)
 
