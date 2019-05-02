@@ -4,116 +4,92 @@ var Spotify = require('node-spotify-api');
 var keys = require("./keys");
 var spotify = new Spotify(keys.spotify);
 
-
 var axios = require("axios");
 var moment = require('moment');
-// var inquirer = require('inquirer');
+
 var fs = require('fs');
+var colors = require('colors');
 
 var inputOne = process.argv[2];
 var inputTwo = process.argv.slice(3).join(" ");
+var divider = "\n ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ \n";
 
-var queryUrl = "http://www.omdbapi.com/?t=" + inputTwo + "&y=&plot=short&apikey=trilogy";
-
-// This line is just to help us debug against the actual URL.
-// console.log(queryUrl);
-
-// function theSwich ()
-switch (inputOne) {
+function runThis() {
+  switch (inputOne) {
     case "concert-this":
-    concertThis();
-    break;
-    
+      concertThis();
+      break;
+
     case "spotify-this-song":
-    spotifyThisSong();
-    break;
-    
+      spotifyThisSong();
+      break;
+
     case "movie-this":
-    movieThis();
-    break;
-    
+      movieThis();
+      break;
+
     case "do-what-it-says":
-    whatItSays();
-    break;
-    }
+      whatItSays();
+      break;
+  }
+}
+runThis();
 
-    function movieThis() { 
-    //   if (!inputTwo) {
-    //     inputTwo = "Mr. Nobody";
-    // };
-    axios.get(queryUrl).then(
-      function(response) {
-        if(inputTwo){
-        console.log("Title: " + response.data.Title);
-        console.log("Release Year: " + response.data.Year);
-        console.log("Rating: " + response.data.imdbRating);
-        console.log("Rotten Tomatoes Rating: " + response.data.Ratings[1].Value);
-        console.log("Country of Origin: " + response.data.Country);
-        console.log("Language: " + response.data.Language);
-        console.log("Plot: " + response.data.Plot);
-        console.log("Actors: " + response.data.Actors); 
-        } 
-        else {
-        console.log("Title: Mr. Nobody");
-        console.log("Release Year: 2009");
-        console.log("Rating: 7.8");
-        console.log("Rotten Tomatoes Rating: 67%");
-        console.log("Country of Origin: Belgium, Germany, Canada, France, USA, UK");
-        console.log("Language: English, Mohawk");
-        console.log("Plot: A boy stands on a station platform as a train is about to leave. Should he go with his mother or stay with his father? Infinite possibilities arise from this decision. As long as he doesn't choose, anything is possible.");
-        console.log("Actors: Jared Leto, Sarah Polley, Diane Kruger, Linh Dan Pham"); 
-        }
+function movieThis() {
+  if (!inputTwo) {
+    inputTwo = "Mr. Nobody";
+  };
+  var queryUrl = "http://www.omdbapi.com/?t=" + inputTwo + "&y=&plot=short&apikey=trilogy";
+  axios.get(queryUrl).then(
+    function (response) {
+      if (inputTwo) {
+
+        var movieData = "     Movie Title: ".bold.yellow + "\n" + "       " + response.data.Title + "\n" + "     Release Year: ".bold.yellow + "\n" + "       " + response.data.Year + "\n" + "     Rating: ".bold.yellow + "\n" + "       " + response.data.imdbRating + "\n" + "     Rotten Tomatoes Rating: ".bold.yellow + "\n" + "       " + response.data.Ratings[1].Value + "\n" + "     Country of Origin: ".bold.yellow + "\n" + "       " + response.data.Country + "\n" + "     Language: ".bold.yellow + "\n" + "       " + response.data.Language + "\n" + "     Movie Plot: ".bold.yellow + "\n" + "       " + response.data.Plot + "\n" + "     Actors: ".bold.yellow + "\n" + "       " + response.data.Actors;
+
+        console.log("\n" + ("|~~~~~~~~~~~~~~~~~~~~".bold.yellow + "  MOVIE THIS   ".bold.bgYellow + "~~~~~~~~~~~~~~~~~~~~~~~~|".bold.yellow) + "\n" + movieData);
       }
-    ); }
-
-function concertThis(){
-    axios.get("https://rest.bandsintown.com/artists/" + inputTwo + "/events?app_id=codingbootcamp")
-  .then(function(response) {
-    console.log("Artist Name: " + inputTwo);
-    console.log("Venue: " + response.data[0].venue.name);
-    console.log("Venue location: " + response.data[0].venue.city, response.data[0].venue.region);
-    console.log("date: " + moment(response.data[0].datetime).format("MM/DD/YYYY"));
-  })
+    }
+  );
 }
 
-  // .catch(function(error) {
-  //   if (error.response) {
-  //     console.log(error.response.data);
-  //     console.log(error.response.status);
-  //     console.log(error.response.headers);
-  //   } else if (error.request) {
-  //     console.log(error.request);
-  //   } else {
-  //     console.log("Error", error.message);
-  //   }
-  //   console.log(error.config);
-//   });
-// }
+function concertThis() {
+  axios.get("https://rest.bandsintown.com/artists/" + inputTwo + "/events?app_id=codingbootcamp")
+    .then(function (response) {
 
+      var concertData = "     Artist Name: ".bold.cyan + "\n" + "       " + inputTwo + "\n" + "     Venue: ".bold.cyan + "\n" + "       " + response.data[0].venue.name + "\n" + "     Venue Location: ".bold.cyan + "\n" + "       " + response.data[0].venue.city + ", " + response.data[0].venue.region + "\n" + "     Date of the Concert: ".bold.cyan + "\n" + "       " + moment(response.data[0].datetime).format("MM/DD/YYYY");
 
-function spotifyThisSong () {
+      console.log("\n" + ("|~~~~~~~~~~~~~~~~~~~~".bold.cyan + "  CONCERT THIS   ".bold.bgCyan + "~~~~~~~~~~~~~~~~~~~~~~~~|".bold.cyan) + "\n" + concertData);
+    })
+}
+
+function spotifyThisSong() {
   if (!inputTwo) {
     inputTwo = "the sign ace of base"
-};
-  spotify.search({ type: 'track', query: inputTwo}, function(err, data) {
+  };
+  spotify.search({
+    type: 'track',
+    query: inputTwo
+  }, function (err, data) {
     if (err) {
       return console.log('Error: ' + err);
     }
-  console.log("Artist Name: " + data.tracks.items[0].artists[0].name);
-  console.log("Song: " + data.tracks.items[0].name);
-  console.log("Preview link: " + data.tracks.items[0].preview_url);
-  console.log("Album: " + data.tracks.items[0].album.name);
-  }
-  )}
-  
-  // function whatItSays (){
-  //   fs.readFile('random.tx', 'utf8', function (err, data){
-  //     if (err) throw err;
-  //     var dataArr = data.split(',');
-  //     if (dataArr.length == 2){
-  //       pick(dataArr[0], dataArr[1]);
-  //     }else if (dataArr.lenght == 1){
-  //       pick(dataArr[0]);
-  //     }
-  //     });
-  //   }
+
+    var musicData = "     Artist Name: ".bold.green + "\n" + "       " + data.tracks.items[0].artists[0].name + "\n" + "     Name of the Song: ".bold.green + "\n" + "       " + data.tracks.items[0].name + "\n" + "     Preview Link: ".bold.green + "\n" + "       " + data.tracks.items[0].preview_url + "\n" + "     Name of the Album: ".bold.green + "\n" + "       " + data.tracks.items[0].album.name;
+
+    fs.appendFile("log.txt", musicData + divider, function (err) {
+      if (err) throw err;
+
+      console.log("\n" + ("|~~~~~~~~~~~~~~~~~~".bold.green + "  SPOTIFY THIS SONG   ".bold.bgGreen + "~~~~~~~~~~~~~~~~~~~~~~|".bold.green) + "\n" + musicData);
+    })
+  })
+}
+
+function whatItSays() {
+  fs.readFile("random.txt", "utf8", function (err, data) {
+    console.log("\n" + "             |~~~~~~".rainbow.bold + " WHAT IT SAYS IS...".rainbow.bold + "~~~~~~|".rainbow.bold);
+    var dataArray = data.split(",");
+    inputOne = dataArray[0];
+    inputTwo = dataArray[1];
+    runThis();
+  })
+}
