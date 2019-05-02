@@ -15,3 +15,65 @@
 [33m[1m     Actors: [22m[39m
        Jared Leto, Sarah Polley, Diane Kruger, Linh Dan Pham
  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ 
+[36m[1m     Artist Name: [22m[39m
+       korn
+[36m[1m     Venue: [22m[39m
+       Welcome To Rockville
+[36m[1m     Venue Location: [22m[39m
+       Jacksonville, FL
+[36m[1m     Date of the Concert: [22m[39m
+       05/03/2019
+ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ 
+[32m[1m     Artist Name: [22m[39m
+       Ace of Base
+[32m[1m     Name of the Song: [22m[39m
+       The Sign
+[32m[1m     Preview Link: [22m[39m
+       https://p.scdn.co/mp3-preview/4c463359f67dd3546db7294d236dd0ae991882ff?cid=d7cbe6392c9f4e0081d9a9f908e65ba5
+[32m[1m     Name of the Album: [22m[39m
+       The Sign (US Album) [Remastered]
+ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ 
+[36m[1m     Artist Name: [22m[39m
+       tool
+[36m[1m     Venue: [22m[39m
+       Metropolitan Park
+[36m[1m     Venue Location: [22m[39m
+       Jacksonville, FL
+[36m[1m     Date of the Concert: [22m[39m
+       05/05/2019
+ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ 
+[33m[1m     Movie Title: [22m[39m
+       Cinderella
+[33m[1m     Release Year: [22m[39m
+       2015
+[33m[1m     Rating: [22m[39m
+       6.9
+[33m[1m     Rotten Tomatoes Rating: [22m[39m
+       84%
+[33m[1m     Country of Origin: [22m[39m
+       USA, UK
+[33m[1m     Language: [22m[39m
+       English
+[33m[1m     Movie Plot: [22m[39m
+       When her father unexpectedly dies, young Ella finds herself at the mercy of her cruel stepmother and her scheming stepsisters. Never one to give up hope, Ella's fortunes begin to change after meeting a dashing stranger.
+[33m[1m     Actors: [22m[39m
+       Cate Blanchett, Lily James, Richard Madden, Helena Bonham Carter
+ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ 
+[36m[1m     Artist Name: [22m[39m
+       korn
+[36m[1m     Venue: [22m[39m
+       Welcome To Rockville
+[36m[1m     Venue Location: [22m[39m
+       Jacksonville, FL
+[36m[1m     Date of the Concert: [22m[39m
+       05/03/2019
+ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ 
+[32m[1m     Artist Name: [22m[39m
+       Ace of Base
+[32m[1m     Name of the Song: [22m[39m
+       The Sign
+[32m[1m     Preview Link: [22m[39m
+       https://p.scdn.co/mp3-preview/4c463359f67dd3546db7294d236dd0ae991882ff?cid=d7cbe6392c9f4e0081d9a9f908e65ba5
+[32m[1m     Name of the Album: [22m[39m
+       The Sign (US Album) [Remastered]
+ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ 
