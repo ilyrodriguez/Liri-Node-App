@@ -15,7 +15,7 @@ Commands:
 ![image](https://user-images.githubusercontent.com/24906805/57030002-5e121d00-6c11-11e9-8f18-32d2923d5569.png)
 
 - node liri.js movie-this (name of movie) : Will display the information for the movie requested
-[image](https://user-images.githubusercontent.com/24906805/57030024-6d916600-6c11-11e9-9767-e2b1df7ac776.png)
+![image](https://user-images.githubusercontent.com/24906805/57030024-6d916600-6c11-11e9-9767-e2b1df7ac776.png)
 
 - node liri.js do-what-is-says : Will display a surprise (spotify-this-song) information coming from random.tx with the song "I want it that way"
 ![image](https://user-images.githubusercontent.com/24906805/57030040-797d2800-6c11-11e9-9d3d-612f74f0e90e.png)
