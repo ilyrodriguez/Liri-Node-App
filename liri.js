@@ -46,6 +46,7 @@ function movieThis() {
 
         var movieData = "     Movie Title: ".bold.yellow + "\n" + "       " + response.data.Title + "\n" + "     Release Year: ".bold.yellow + "\n" + "       " + response.data.Year + "\n" + "     Rating: ".bold.yellow + "\n" + "       " + response.data.imdbRating + "\n" + "     Rotten Tomatoes Rating: ".bold.yellow + "\n" + "       " + response.data.Ratings[1].Value + "\n" + "     Country of Origin: ".bold.yellow + "\n" + "       " + response.data.Country + "\n" + "     Language: ".bold.yellow + "\n" + "       " + response.data.Language + "\n" + "     Movie Plot: ".bold.yellow + "\n" + "       " + response.data.Plot + "\n" + "     Actors: ".bold.yellow + "\n" + "       " + response.data.Actors;
 
+  
         console.log("\n" + ("|~~~~~~~~~~~~~~~~~~~~".bold.yellow + "  MOVIE THIS   ".bold.bgYellow + "~~~~~~~~~~~~~~~~~~~~~~~~|".bold.yellow) + "\n" + movieData);
       }
     }
@@ -58,8 +59,12 @@ function concertThis() {
 
       var concertData = "     Artist Name: ".bold.cyan + "\n" + "       " + inputTwo + "\n" + "     Venue: ".bold.cyan + "\n" + "       " + response.data[0].venue.name + "\n" + "     Venue Location: ".bold.cyan + "\n" + "       " + response.data[0].venue.city + ", " + response.data[0].venue.region + "\n" + "     Date of the Concert: ".bold.cyan + "\n" + "       " + moment(response.data[0].datetime).format("MM/DD/YYYY");
 
+      fs.appendFile("log.txt", concertData + divider, function (err) {
+        if (err) throw err;
+
       console.log("\n" + ("|~~~~~~~~~~~~~~~~~~~~".bold.cyan + "  CONCERT THIS   ".bold.bgCyan + "~~~~~~~~~~~~~~~~~~~~~~~~|".bold.cyan) + "\n" + concertData);
     })
+  })
 }
 
 function spotifyThisSong() {
