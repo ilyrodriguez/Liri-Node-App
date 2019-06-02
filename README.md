@@ -29,13 +29,13 @@ Technologies used:
 - Node.Js
 
 - API:
-   - spotify
+   - Spotify
    - OMDB
    - Bands in Town
 
 - NPM Packages:
-   - request
-   - moment
+   - Request
+   - Moment.Js
    - Axios
    - Fs
    - Color
