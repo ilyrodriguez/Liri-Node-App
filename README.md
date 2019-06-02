@@ -21,3 +21,21 @@ Commands:
 ![image](https://user-images.githubusercontent.com/24906805/57030040-797d2800-6c11-11e9-9d3d-612f74f0e90e.png)
 
 
+
+UCF Coding Bootcamp April 2019
+
+Technologies used:
+- Javascript
+- Node.Js
+
+- API:
+   - spotify
+   - OMDB
+   - Bands in Town
+
+- NPM Packages:
+   - request
+   - moment
+   - Axios
+   - Fs
+   - Color
