@@ -22,7 +22,7 @@ Commands:
 
 
 
-UCF Coding Bootcamp April 2019
+UCF Coding Bootcamp -  April 2019
 
 Technologies used:
 - Javascript
